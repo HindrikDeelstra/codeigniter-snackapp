@@ -1,0 +1,58 @@
+.sort-table {
+    font:           Icon;
+    border-collapse:    collapse;
+    border:         1px Solid #C0C0C0;
+    background:     Window;
+    color:          WindowText;
+}
+
+.sort-table thead {
+    background:     ButtonFace;
+    text-align:             left;
+}
+
+.sort-table td {
+    border:         1px solid #C0C0C0;
+    padding:        2px;
+    text-align:     right;
+}
+
+.sort-table thead td {
+    border:         1px solid;
+    border-color:       ButtonHighlight ButtonShadow
+                ButtonShadow ButtonHighlight;
+    cursor:         default;
+    text-align:             left;
+}
+
+.sort-table thead td:active {
+    border-color:       ButtonShadow ButtonHighlight
+                ButtonHighlight ButtonShadow;
+    padding:        3px 4px 1px 6px;
+    text-align:             left;
+}
+
+.sort-table thead td[_sortType=None]:active {
+    border-color:       ButtonHighlight ButtonShadow
+                ButtonShadow ButtonHighlight;
+    padding:        2px 5px;
+    text-align:     left;
+}
+
+.sort-arrow {
+    width:          11px;
+    height:         11px;
+    background-position:    center center;
+    background-repeat:  no-repeat;
+    margin:         0 2px;
+}
+
+.sort-arrow.descending {
+    background-image:   url("/images/downsimple.png");
+
+}
+
+.sort-arrow.ascending {
+    background-image:   url("/images/upsimple.png");
+}
+
