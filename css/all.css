@@ -16,11 +16,12 @@ h2 {
     background-color: lightgrey;
     padding: 5px;
 }
-root { 
+root {
     display: block;
 }
 body {
-    background-image:url('https://oxilion.nl/img/bg2.png');
+    #background-image:url('https://oxilion.nl/img/bg2.png');
+    background-image:url('/images/bg-snackapp.jpg');
     background-position:right top;
     background-repeat:no-repeat;
 }
@@ -101,7 +102,7 @@ td.bij {
     text-align:center;
 }
 .menu {
-    padding-left: 20px;    
+    padding-left: 20px;
 }
 a {
     color: black;
