@@ -465,7 +465,7 @@ for you to process.
 To invoke a callback just put the method name in a rule, with
 "callback\_" as the rule **prefix**. If you need to receive an extra
 parameter in your callback method, just add it normally after the
-method name between square brackets, as in: "callback_foo**[bar]**",
+method name between square brackets, as in: ``callback_foo[bar]``,
 then it will be passed as the second argument of your callback method.
 
 .. note:: You can also process the form data that is passed to your
@@ -495,8 +495,7 @@ The above code would use the ``valid_username()`` method from your
 
 This is just an example of course, and callbacks aren't limited to models.
 You can use any object/method that accepts the field value as its' first
-parameter. Or if you're running PHP 5.3+, you can also use an anonymous
-function::
+parameter. You can also use an anonymous function::
 
 	$this->form_validation->set_rules(
 		'username', 'Username',
@@ -522,7 +521,7 @@ the second element of an array, with the first one being the rule name::
 		)
 	);
 
-Anonymous function (PHP 5.3+) version::
+Anonymous function version::
 
 	$this->form_validation->set_rules(
 		'username', 'Username',
@@ -1028,11 +1027,12 @@ Class Reference
 
 .. php:class:: CI_Form_validation
 
-	.. php:method:: set_rules($field[, $label = ''[, $rules = '']])
+	.. php:method:: set_rules($field[, $label = ''[, $rules = ''[, $errors = array()]]])
 
 		:param	string	$field: Field name
 		:param	string	$label: Field label
 		:param	mixed	$rules: Validation rules, as a string list separated by a pipe "|", or as an array or rules
+		:param	array	$errors: A list of custom error messages
 		:returns:	CI_Form_validation instance (method chaining)
 		:rtype:	CI_Form_validation
 
