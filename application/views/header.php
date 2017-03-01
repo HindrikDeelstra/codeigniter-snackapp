@@ -39,7 +39,7 @@
             </br>
             Wil je weten wie deze week mag halen?</br>
             Kijk dan bij de <a href="/index.php/beheer/snackstats">Snackstats</a>!</p>
-            De aanwezige collega bovenaan de lijst (met het laagste saldo), is aan de beurt.
+            De mee-snackende collega bovenaan de lijst (met het laagste saldo), is aan de beurt.
                     <?php endif; ?>
                 </span>
             </div>

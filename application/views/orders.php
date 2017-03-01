@@ -35,6 +35,9 @@
 <tr><td><b>Totaal besteld: &euro; <?php print(number_format($som, 2, ',', '.')); ?></b></td></td>
 </table>
 
+<b>LET OP: Dit is niet het handigste overzicht om de bestelling door te geven!</b>
+<b>Kijk daarvoor op de lijst met <a href="/index.php/snack/bestellingen">Bestellingen</a></b>
+
 <script type="text/javascript">
 var st = new SortableTable(document.getElementById("table"), ["String", "Number", "String", "String", "Number", "Number"]);
 </script>
