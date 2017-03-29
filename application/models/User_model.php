@@ -1,7 +1,7 @@
 <?php
 
 class User_model extends CI_Model {
-        
+
         public $id = 0;
         public $email = '';
         private $password = '';
@@ -20,7 +20,7 @@ class User_model extends CI_Model {
             if ($id == 0) {
                 $id = $this->session->userdata('uid');
             }
-            $q = $this->db->get_where('user', array('id' => $id));                
+            $q = $this->db->get_where('user', array('id' => $id));
             if ($q->num_rows() > 0) {
                 $r = $q->result();
                 $this->setVars($r);
@@ -56,7 +56,7 @@ class User_model extends CI_Model {
 
             return $this->resetkey;
         }
-        
+
         public function newPassword() {
             $newRaw = rand(11,99) . chr(rand(65,90)) . chr(rand(97,122)) . rand(0,9) . chr(rand(97,122)) . chr(rand(65,90)) . rand(0,9) . chr(rand(97,122)) . chr(rand(65,90));
             $this->password = md5($newRaw);
@@ -66,7 +66,7 @@ class User_model extends CI_Model {
             $this->db->update('user');
             return $newRaw;
         }
-        
+
         public function isIngelogd() {
             if ($this->session->userdata('uid') != '') {
                 return true;
@@ -96,6 +96,10 @@ class User_model extends CI_Model {
 
         public function loguit() {
                 $this->session->unset_userdata('uid');
+        }
+
+        public function isAdmin() {
+            return ($this->admin == '1');
         }
 
         public function getOrderHistorie($limit = 0) {
@@ -179,7 +183,7 @@ class User_model extends CI_Model {
                         $toReLimit[$key] = $item;
                 }
                 return $toReLimit;
-            
+
         }
 
         public function getBetalingen() {

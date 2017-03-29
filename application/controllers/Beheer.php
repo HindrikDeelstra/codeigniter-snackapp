@@ -35,15 +35,26 @@ class Beheer extends CI_Controller {
                 $this->load->view('footer');
         }
 
+        function getAdmins() {
+            $q = $this->db->get_where('user', array('admin' => '1'));
+            $r = $q->result();
+            $a = array();
+            foreach ($r as $user) {
+                $a[] = $user->email;
+            }
+            return $a;
+        }
+
         function declareren() {
                 $this->load->view('header');
                 if ($this->user->isIngelogd()) {
                         $this->user->init();
-                        if($this->user->getId() != 12) {
-                                $this->load->view('geentoegang');
+                        if($this->user->isAdmin()) {
+                            $data = array('userstats' => $this->getAllUserStats()['users'], 'checksum' => $this->getAllUserStats()['checksum'], 'datum' => $this->getLastOrderDate(), 'admin' => $this->user->isAdmin());
+                            $this->load->view('declareren', $data);
                         } else {
-                        $data = array('userstats' => $this->getAllUserStats()['users'], 'checksum' => $this->getAllUserStats()['checksum'], 'datum' => $this->getLastOrderDate());
-                        $this->load->view('declareren', $data);
+                            $data = array('admins' => $this->getAdmins());
+                            $this->load->view('geentoegang', $data);
                         }
                 } else {
                         $this->load->view('login');
