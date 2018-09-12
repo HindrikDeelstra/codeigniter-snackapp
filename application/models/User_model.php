@@ -4,6 +4,7 @@ class User_model extends CI_Model {
 
         public $id = 0;
         public $email = '';
+		private $admin = '0';
         private $password = '';
         public $krediet = 0.0;
         private $resetkey = '';
@@ -196,6 +197,7 @@ class User_model extends CI_Model {
         private function setVars($r) {
             $this->id = $r[0]->id;
             $this->email = $r[0]->email;
+			$this->admin= $r[0]->admin;
             $this->password = $r[0]->password;
             $this->resetkey = $r[0]->resetkey;
             $userId = $this->getId();
