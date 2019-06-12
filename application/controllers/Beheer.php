@@ -88,6 +88,7 @@ class Beheer extends CI_Controller {
                                         SUBSTRING_INDEX(`email`,'@',1) as `naam`
                                         FROM `user_stats`
                                         WHERE `email` LIKE '%@oxilion.nl'
+										OR `email` LIKE '%@fundaments.nl'
                                         ORDER BY `saldo`;");
                 $r = $q->result();
                 #return $r;
