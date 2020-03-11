@@ -5,7 +5,7 @@
 Selecteer de gebruiker die de snacks heeft gekocht:
 <select name="uid">
 <?php foreach ($userstats as $id => $user) :?>
-	<?php if ($user['laatstgekocht'] == date('Y-m-d')) :?>
+	<?php if ($user['laatstgekocht'] == $datum) :?>
 		<option value="<?php echo $id; ?>"><?php echo $user['naam']; ?></option>
 	<?php endif; ?>
 <?php endforeach; ?>
