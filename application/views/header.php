@@ -31,7 +31,7 @@
                 <h1>Beheer</h1>
             <ul>
                 <li><a href="/index.php/beheer/snackstats">Snackstats</a></li>
-                                <li><a href="/index.php/beheer/orders">Orders v/d week</a></li>
+                <li><a href="/index.php/beheer/orders">Orders v/d week</a></li>
                 <li><a href="/index.php/beheer/declareren">Declareren</a></li></br>
                 <li><a href="/index.php/beheer/nieuwpass">Wachtwoord wijzigen</a></li>
                 <li><a href="/index.php/snack/loguit">Loguit</a></li>
